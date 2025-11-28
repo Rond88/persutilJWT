@@ -50,3 +50,40 @@ ALTER TABLE `blog`
 ALTER TABLE `blog`
   MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
 COMMIT;
+
+
+-- Pollyanna --
+
+
+CREATE TABLE `soares` (
+  `id` bigint NOT NULL,
+  `preguntas` varchar(255) CHARACTER SET utf32 COLLATE utf32_unicode_ci NOT NULL,
+  `fecha_creacion` datetime NOT NULL,
+  `fecha_modificacion` datetime DEFAULT NULL,
+  `publicacion` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci;
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `soares`
+--
+ALTER TABLE `soares`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `soares`
+--
+ALTER TABLE `soares`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3137;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
