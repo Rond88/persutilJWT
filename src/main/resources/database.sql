@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: database:3306
--- Tiempo de generación: 01-12-2025 a las 11:14:46
+-- Tiempo de generación: 01-12-2025 a las 11:19:43
 -- Versión del servidor: 8.4.5
 -- Versión de PHP: 8.2.28
 
@@ -108,6 +108,22 @@ CREATE TABLE `frasesmotivacionales` (
   `frase` varchar(1024) CHARACTER SET utf32 COLLATE utf32_unicode_ci NOT NULL,
   `autor` varchar(255) CHARACTER SET utf32 COLLATE utf32_unicode_ci NOT NULL DEFAULT 'Anónimo',
   `es_publica` tinyint(1) NOT NULL,
+  `fecha_creacion` datetime NOT NULL,
+  `fecha_modificacion` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `gallery_image`
+--
+
+CREATE TABLE `gallery_image` (
+  `id` bigint NOT NULL,
+  `titulo` varchar(1024) CHARACTER SET utf32 COLLATE utf32_unicode_ci NOT NULL,
+  `descripcion` longtext CHARACTER SET utf32 COLLATE utf32_unicode_ci NOT NULL,
+  `url_imagen` varchar(2048) CHARACTER SET utf32 COLLATE utf32_unicode_ci NOT NULL,
+  `publicado` tinyint(1) NOT NULL DEFAULT '0',
   `fecha_creacion` datetime NOT NULL,
   `fecha_modificacion` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci;
@@ -277,6 +293,12 @@ ALTER TABLE `frasesmotivacionales`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `gallery_image`
+--
+ALTER TABLE `gallery_image`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `garcia`
 --
 ALTER TABLE `garcia`
@@ -366,6 +388,12 @@ ALTER TABLE `frasesmotivacionales`
   MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `gallery_image`
+--
+ALTER TABLE `gallery_image`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `garcia`
 --
 ALTER TABLE `garcia`
@@ -413,29 +441,3 @@ ALTER TABLE `soares`
 ALTER TABLE `tarea`
   MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
 COMMIT;
-
--- Estructura de tabla para la tabla `gallery_image`
-CREATE TABLE `gallery_image` (
-  `id` bigint NOT NULL,
-  `titulo` varchar(1024) CHARACTER SET utf32 COLLATE utf32_unicode_ci NOT NULL,
-  `descripcion` longtext CHARACTER SET utf32 COLLATE utf32_unicode_ci NOT NULL,
-  `url_imagen` varchar(2048) CHARACTER SET utf32 COLLATE utf32_unicode_ci NOT NULL,
-  `publicado` tinyint(1) NOT NULL DEFAULT '0',
-  `fecha_creacion` datetime NOT NULL,
-  `fecha_modificacion` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci;
-
--- Indices de la tabla `gallery_image`
-ALTER TABLE `gallery_image`
-  ADD PRIMARY KEY (`id`);
-
--- AUTO_INCREMENT
-ALTER TABLE `gallery_image`
-  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
-
-
-
-
-
-
-
