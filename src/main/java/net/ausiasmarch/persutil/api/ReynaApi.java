@@ -61,4 +61,16 @@ public class ReynaApi {
     public ResponseEntity<Long> count() {
         return ResponseEntity.ok(oReynaService.count());
     }
+
+    //publicar
+    @PutMapping("/publicar/{id}")
+    public ResponseEntity<Long> publicar(@PathVariable Long id) {
+        return ResponseEntity.ok(oReynaService.publicar(id));
+    }
+
+    // despublicar post
+    @PutMapping("/despublicar/{id}")
+    public ResponseEntity<Long> despublicar(@PathVariable Long id) {
+        return ResponseEntity.ok(oReynaService.despublicar(id));
+    }
 }
