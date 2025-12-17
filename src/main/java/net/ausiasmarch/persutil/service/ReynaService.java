@@ -151,5 +151,15 @@ public class ReynaService {
         oReynaRepository.save(existingReyna);
         return existingReyna.getId();
     }
+
+    // vaciar tabla blog (solo administrador)
+    public Long empty() {
+        if (!oSessionService.isSessionActive()) {
+            throw new UnauthorizedException("No active session");
+        }
+        Long total = oReynaRepository.count();
+        oReynaRepository.deleteAll();
+        return total;
+    }
 }
     
